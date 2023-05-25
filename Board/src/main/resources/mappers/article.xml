@@ -34,7 +34,7 @@
 		SELECT * FROM `board_file` WHERE `fno`=#{fno};
 	</select>
 	<select id="selectArticles" resultType="kr.co.board.vo.ArticleVO">
-		SELECT * FROM `board_article` ORDER BY `no` DESC LIMIT #{pg},10;
+		SELECT * FROM `board_article` WHERE `parent`=0 ORDER BY `no` DESC LIMIT #{pg},10;
 	</select>
 	<select id="selectCountArticles" resultType="int">
 		SELECT COUNT(*) FROM `board_article`;
